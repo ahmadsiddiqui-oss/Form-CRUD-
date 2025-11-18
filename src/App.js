@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SimpleForm from "./form";
+import UsersTable from "./update";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import BasicTable from "./update";
+// import UsersList from "./userList";
+// import DeleteUser from "./delete";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<SimpleForm />} />
+          <Route path="/update" element={<UsersTable/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
